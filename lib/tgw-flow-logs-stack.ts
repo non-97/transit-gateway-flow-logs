@@ -172,7 +172,7 @@ export class TgwFlowLogsStack extends cdk.Stack {
             destinationCidrBlock: vpcA.vpcCidrBlock,
             transitGatewayId: tgw.ref,
           }
-        ).addDependsOn(tgwVpcAAttachment);
+        ).addDependsOn(tgwVpcBAttachment);
       });
 
     // EC2 Instance
