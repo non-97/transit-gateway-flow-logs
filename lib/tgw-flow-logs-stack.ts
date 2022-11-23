@@ -18,7 +18,7 @@ export class TgwFlowLogsStack extends cdk.Stack {
 
     // VPC
     const vpcA = new cdk.aws_ec2.Vpc(this, "VPC A", {
-      cidr: "10.0.1.0/24",
+      ipAddresses: cdk.aws_ec2.IpAddresses.cidr("10.0.1.0/24"),
       enableDnsHostnames: true,
       enableDnsSupport: true,
       natGateways: 0,
@@ -38,7 +38,7 @@ export class TgwFlowLogsStack extends cdk.Stack {
     });
 
     const vpcB = new cdk.aws_ec2.Vpc(this, "VPC B", {
-      cidr: "10.0.2.0/24",
+      ipAddresses: cdk.aws_ec2.IpAddresses.cidr("10.0.2.0/24"),
       enableDnsHostnames: true,
       enableDnsSupport: true,
       natGateways: 0,
